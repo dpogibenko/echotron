@@ -218,11 +218,11 @@ func sendStickers(url string, stickers ...InputSticker) (res []byte, err error) 
 }
 
 func serializePerms(permissions ChatPermissions) (string, error) {
-	perm, err := json.Marshal(PermissionOptions{permissions})
+	// perm, err := json.Marshal(PermissionOptions{permissions})
+	perm, err := json.Marshal(permissions)
 	if err != nil {
 		return "", err
 	}
-
 	return string(perm), nil
 }
 
